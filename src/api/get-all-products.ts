@@ -40,6 +40,6 @@ export interface ProductsResponse {
 
 export async function getAllProduct(): Promise<ProductsResponse> {
   const result = await api.get<ProductsResponse>("/api/v1/products");
-  console.log(result.data);
+  //console.log(result.data);
   return result.data;
 }

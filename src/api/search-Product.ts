@@ -8,7 +8,7 @@ type SearchParams = {
 
 
 export async function searchProduct({page, product}:SearchParams) {
-  const result = await api.get<ProductsResponse>("/api/v1/products", 
+  const result = await api.get<ProductsResponse>("/api/v1/product", 
     {
       params: {
         page,
@@ -17,6 +17,6 @@ export async function searchProduct({page, product}:SearchParams) {
     }
   );
 
-  console.log(result.data)
+  //console.log(result.data)
   return result.data;
 }

@@ -6,7 +6,7 @@ type ProductCategoryProps = {
 }
 
 export async function getProductCategory({category}:ProductCategoryProps): Promise<ProductsResponse> {
-  const result = await api.get<ProductsResponse>("/api/v1/products", {
+  const result = await api.get<ProductsResponse>("/api/v1/product", {
     params: {
       nameCategory: category
     }

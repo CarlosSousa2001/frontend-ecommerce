@@ -9,6 +9,15 @@ import { LeftMenu } from './_components/LeftMenu'
 import { CardItem } from '@/components/ProductCard/CardItem'
 import { ProductNotFound } from './_components/ProductNotFound'
 
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
+
 const defaultProductsResponse: ProductsResponse = {
   content: [],
   pageable: {
@@ -79,7 +88,21 @@ export default function products() {
         <div className=''>
 
           <div className='w-full  h-[60px] py-3'>
-            <p className='text-sm text-zinc-800'>Buscas relacionadas: <span className='text-xd text-zinc-700'> playstation 6 playstation 4 playstation 3 playstation 7 playstation 1 cd playstation 2 jogos playstation 2</span></p>
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink>Produtos</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>{nameProduct}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
           </div>
 
           <div className='grid grid-cols-[290px_1fr]'>
@@ -87,7 +110,7 @@ export default function products() {
               <LeftMenu />
             </div>
 
-          <div className='grid grid-cols-3 gap-4 '>
+            <div className='grid grid-cols-3 gap-4 '>
               {productState.content.map(item => (
                 <CardItem
                   id={item.id}

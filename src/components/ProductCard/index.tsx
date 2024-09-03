@@ -37,7 +37,7 @@ function handleRedirectProductDetailsPage(id:number){
         <p className='text-base uppercase tracking-wider'>{sectionTitle} ❤️</p>
         <span className=' text-sm text-blue-400 cursor-pointer'>Ver mais</span>
       </div>
-      <div>
+      <div className='w-full'>
         <Swiper
           cssMode={true}
           slidesPerView={5}
@@ -48,11 +48,11 @@ function handleRedirectProductDetailsPage(id:number){
           mousewheel={true}
           keyboard={true}
           modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-          className="mySwiper"
+          className="mySwiper "
           style={{ paddingBottom: '40px' }}
         >
           {item.map(item => (
-            <SwiperSlide key={item.id} className='cursor-pointer' onClick={() => handleRedirectProductDetailsPage(item.id)}>
+            <SwiperSlide key={item.id} className='cursor-pointer min-w-[240px]' onClick={() => handleRedirectProductDetailsPage(item.id)}>
               <CardItem
                 id={item.id}
                 title={item.title}

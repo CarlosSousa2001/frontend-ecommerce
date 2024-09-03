@@ -18,16 +18,16 @@ import { getProductCategory } from "@/api/get-product-category";
 //   return await getAllProduct();
 // }
 
-async function getAllProductsFetch(): Promise<Product[]> {
-  return await getRecommendationProduct();
-}
+// async function getAllProductsFetch(): Promise<Product[]> {
+//   return await getRecommendationProduct();
+// }
 
 async function getProductByCategory(category: string): Promise<ProductsResponse> {
   return await getProductCategory({ category: category });
 }
 export default async function Home() {
 
-  const data = await getAllProductsFetch();
+  // const data = await getAllProductsFetch();
 
   const cell = await getProductByCategory("Electronics");
 
@@ -56,9 +56,9 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className="max-w-screen-2lg m-auto flex flex-col items-center gap-4 ">
+      {/* <div className="max-w-screen-2lg m-auto flex flex-col items-center gap-4 ">
         <ProductCardSlide item={data} sectionTitle={"Lista de interesses"} />
-      </div>
+      </div> */}
 
       <div className="max-w-screen-2lg m-auto flex flex-col items-center gap-4 ">
         <ProductCardSlide item={cell.content} sectionTitle={"Celulares"} />
